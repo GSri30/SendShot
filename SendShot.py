@@ -4,11 +4,12 @@ from pynput.keyboard import Key, Listener
 from discord_webhook import DiscordWebhook
 from dotenv import load_dotenv
 
+load_dotenv()
 
 
-class SendShot:
+class SendShotApplication:
     def __init__(self) -> None:
-        pass
+        self.listener=None
 
     def send_discord_webhook(self,file) -> None:
         webhook=DiscordWebhook(os.getenv("WEBHOOK_URL"))    
@@ -25,14 +26,16 @@ class SendShot:
             self.send_discord_webhook(sorted(Path(f"/home/{os.getlogin()}/Pictures").iterdir(),key=os.path.getmtime,reverse=True)[0])
 
     def sendshot(self) -> None:
-        with Listener(
-            on_press=self.on_press,
-        ) as listener:
+        with Listener(on_press=self.on_press,) as listener:
+            self.listener=listener
             listener.join()
+
+    def stop(self) -> None:
+        self.listener.stop()
+        self.listener=None        
 
 
 
 if __name__=="__main__":
-    load_dotenv()
     SShot=SendShot()
     SShot.sendshot()

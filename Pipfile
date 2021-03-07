@@ -4,11 +4,11 @@ verify_ssl = true
 name = "pypi"
 
 [packages]
-keyboard = "*"
-pynput = "*"
-Discord-Webhooks = "*"
+pynput = "==1.6.8"
+pyinstaller = "*"
 python-dotenv = "*"
 discord-webhook = "*"
+pillow = "*"
 
 [dev-packages]
 
