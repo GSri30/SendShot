@@ -6,11 +6,21 @@ This might help you!
 
 - Take a screenshot
 - Thats it!
-- It will automatically DM you that screenshot (Currently this uses discord webhook but can be extended to slack etc)
+- It will automatically message you that screenshot (Currently this uses discord webhook but can be extended to slack etc)
+- Now you can access it from any device!
 
 As simple as that!
 
-How about having a GUI to start this application?
+## How to use it?
+
+- Install all the requirements
+- Create a discord webhook and take down the Webhook URL.
+- Create a .env containing WEBHOOK_URL="your-webhook-url"
+- python3 SendShotMain.py
+
+## Example
+
+![Example](assets/example.png)
 
 
 "FOR EDUCATIONAL PURPOSES ONLY"
