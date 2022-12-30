@@ -37,5 +37,5 @@ class SendShotApplication:
 
 
 if __name__=="__main__":
-    SShot=SendShot()
+    SShot=SendShotApplication()
     SShot.sendshot()
